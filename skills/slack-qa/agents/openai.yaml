@@ -1,0 +1,6 @@
+interface:
+  display_name: "Slack QA"
+  short_description: "Test a GitHub PR through local Zoe"
+  default_prompt: "Use $slack-qa to inspect this GitHub PR, create a Slack QA plan, and test it through the already-running local Zoe runtime."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-template="omp-tech-doc-v1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technical Doc: <!-- TOPIC --></title>
+  <!--
+    Minimal skeleton for /tech-doc. Keep the shared OMP plan style placeholder:
+    the saver replaces it with the canonical reading shell, responsive Contents
+    rail, theme, typography, and diagram controls from agent/lib/html-document.cjs.
+
+    Required structure:
+      main.content       document body
+      nav.toc            Contents rail
+      pre.mermaid        rendered to inline SVG by the saver
+      footer.footer      authored date
+  -->
+  <style data-omp-plan-styles></style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to document</a>
+  <div class="layout">
+    <main class="content" id="main">
+      <header class="doc-header">
+        <div class="section-label">Technical Doc</div>
+        <h1><!-- DOCUMENT TITLE --></h1>
+        <p><!-- SMALL DESCRIPTION SUMMARY: what the feature does and who uses it --></p>
+      </header>
+
+      <div class="section-label">01 · How it works</div>
+      <h2 id="how-it-works">How it works</h2>
+      <p><!-- Plain-language explanation of the current behavior and its key boundary. --></p>
+
+      <div class="section-label">02 · Diagrams</div>
+      <h2 id="diagrams">System flow</h2>
+      <p><!-- State the main takeaway before the diagram. --></p>
+      <pre class="mermaid" data-caption="Short takeaway about the interaction">flowchart LR
+    User[User] --> Feature[Feature]
+    Feature --> Result[Result]
+</pre>
+
+      <div class="section-label">03 · User journey</div>
+      <h2 id="user-journey">User journey</h2>
+      <p><!-- Describe what the user sees while the system moves through the flow. --></p>
+      <ol>
+        <li><!-- Initiating action and first observable response. --></li>
+        <li><!-- Important system transition or decision. --></li>
+        <li><!-- Final user-visible result, error, or retry behavior. --></li>
+      </ol>
+    </main>
+
+    <nav class="toc" aria-label="Technical document sections">
+      <strong>Contents</strong>
+      <a href="#how-it-works">How it works</a>
+      <a href="#diagrams">Diagrams</a>
+      <a href="#user-journey">User journey</a>
+    </nav>
+  </div>
+  <footer class="footer">Authored <!-- Month DD, YYYY --></footer>
+</body>
+</html>

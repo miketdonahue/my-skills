@@ -1,0 +1,6 @@
+interface:
+  display_name: "Close Worktree"
+  short_description: "Delete clean merged or no-PR worktrees; confirm before removing others"
+  default_prompt: "Use $close-worktree to delete a clean worktree after its PR merges or when no PR exists, and ask before deleting other worktrees."
+policy:
+  allow_implicit_invocation: false

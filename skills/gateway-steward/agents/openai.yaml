@@ -1,0 +1,6 @@
+interface:
+  display_name: "Gateway Steward"
+  short_description: "Improve gateway source safely"
+  default_prompt: "Use $gateway-steward to run a safe gateway source maintenance pass."
+policy:
+  allow_implicit_invocation: false

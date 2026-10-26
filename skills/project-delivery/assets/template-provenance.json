@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Preserve the supplied developer-first guide content inside the canonical OMP reading shell used by tech-doc and write-plan; the shared helper remains the sole style authority.",
+  "originalHtml": {
+    "sourcePath": "/Users/michael/Downloads/cg-restructure-publication-plan.html",
+    "sha256": "41de5ed63ac67198881328113f4113a880055420e033fa599557ab230083beb3",
+    "layoutLines": "284-348",
+    "completeDescriptionStartLine": 349,
+    "relationDisclosureStartLine": 18441,
+    "retainedStructure": [
+      "main.content",
+      "section#how-to-use before the developer queues",
+      "section#developer-queues with one nested section per developer",
+      "table.developer-queue: Queue, Ticket, Can land after, Delivery stage",
+      "concrete handoff narrative before the global table",
+      "table#dependency-overview: Order, Delivery, Direct prerequisites, Delivery stage, Execution mode, Developer",
+      "stage meanings and conditional safe-landing explanation",
+      "complete descriptions in native details/summary disclosures",
+      "staffing/proof/operational authorization disclosure",
+      "native relation details disclosure",
+      "publication approval context disclosure",
+      "div.table-wrap around every table"
+    ]
+  },
+  "originalGenerator": {
+    "sourceName": "cg-build-publication-package.py",
+    "sourceLocationAtExtraction": "OMP planning-session local artifact",
+    "sha256": "cadefa5360d1d6da1f4d1d43f7ecbb059bdc920c0392dbd0f8da19eba5f3c040",
+    "layoutImplementationLines": "111-156",
+    "sharedHelperInvocationLines": "157-161",
+    "markdownImplementation": "Python Markdown with fenced_code, tables and sane_lists extensions"
+  },
+  "sharedHelper": {
+    "sourcePathAtExtraction": "/Users/michael/.omp/agent/lib/html-document.cjs",
+    "sha256AtExtraction": "1dbe2c7ff95510f0de662e9e29da27bd86da5e2ad28aff58991d37c664f3d226",
+    "implementationLines": "824-845",
+    "defaultRuntimePath": "~/.omp/agent/lib/html-document.cjs",
+    "export": "finalizeHtml",
+    "originalInvocationOptions": {"maxWidth": "1000px", "planStyles": true},
+    "runtimeOptions": {"planStyles": true},
+    "copiedThemeCss": false,
+    "runtimeHashPinned": false
+  },
+  "canonicalShell": {
+    "templateId": "omp-project-delivery-v1",
+    "referenceTemplates": ["~/.omp/agent/skills/tech-doc/assets/template.html", "~/.omp/agent/skills/write-plan/assets/template.html"],
+    "requiredStructure": [".layout", "main.content#main", "nav.toc", "a.skip", "footer.footer", ".section-label", ".details-body"],
+    "reason": "The original bare main fragment loaded shared CSS but omitted the padded grid and Contents rail that the CSS expects. Preserve content structure, not that defective shell."
+  },
+  "generalization": {
+    "template": "assets/template.html",
+    "renderer": "scripts/render.cjs",
+    "projectSpecificClaims": "Supplied only by the input manifest and required complete Markdown descriptions/narratives, never inherited from the historical example.",
+    "developerCount": "Any positive number; no fixed labels, names or staffing estimates.",
+    "identityPolicy": "Stable graph IDs anchor full descriptions; optional displayId and URL show actual published identities without changing graph keys.",
+    "approvalIsolation": "Read-only inputs and exclusive creation of a new Markdown/HTML pair; no tracker publication, approved-artifact overwrite or HTML-only approval mutation.",
+    "markdownHtmlParity": "The same manifest, full Markdown source strings, computed graph ordering and narrative content produce both representations.",
+    "mermaidPolicy": "Remain ordinary fenced code to avoid optional helper external tooling or runtime installs."
+  },
+  "provenanceOnly": "Historical source paths and hashes document extraction. They are not runtime dependencies and do not claim product implementation or verification has completed."
+}

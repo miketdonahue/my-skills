@@ -1,0 +1,111 @@
+{
+  "reviewContext": {
+    "pull": {
+      "url": "https://github.com/example/review-fixture/pull/7",
+      "number": 7,
+      "title": "Enable strict account lookup behind a default-off flag",
+      "body": "Keep legacy callers compatible while the flag is off. When enabled, migrate the adapter response without breaking consumers.",
+      "author": "fixture-author",
+      "labels": [
+        "feature"
+      ],
+      "baseRefName": "main",
+      "baseRefOid": "base-fixture-sha",
+      "headRefName": "strict-account-lookup",
+      "headRefOid": "head-fixture-sha",
+      "draft": false,
+      "mergeable": true,
+      "state": "open"
+    },
+    "diff": "diff --git a/src/lookup.js b/src/lookup.js\n--- a/src/lookup.js\n+++ b/src/lookup.js\n@@\n-export function lookup(id) { return cache.get(id) ?? null; }\n+export function lookup(id, strict = flags.strictLookup ?? true) {\n+  const value = cache.get(id);\n+  if (strict && !value) throw new Error('missing account');\n+  return value ?? null;\n+}\ndiff --git a/src/adapter.js b/src/adapter.js\n--- a/src/adapter.js\n+++ b/src/adapter.js\n@@\n-export const project = (account) => ({ userId: account.id });\n+export const project = (account) => ({ id: account.id });\n",
+    "files": [
+      {
+        "filename": "src/lookup.js",
+        "status": "modified",
+        "patch": "The strict flag defaults to true and lookup now throws on a miss."
+      },
+      {
+        "filename": "src/adapter.js",
+        "status": "modified",
+        "patch": "The projected key changes from userId to id."
+      }
+    ],
+    "commits": [
+      {
+        "sha": "head-fixture-sha",
+        "commit": {
+          "message": "Add gated strict lookup"
+        }
+      }
+    ],
+    "linkedIssues": [],
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "name": "unit-tests",
+        "conclusion": "SUCCESS",
+        "status": "COMPLETED"
+      }
+    ],
+    "surroundingContext": {
+      "src/legacy-caller.js": "const account = lookup(id); if (!account) return fallbackAccount;",
+      "src/consumer.js": "const projected = project(account); return loadProfile(projected.userId);",
+      "tests/lookup.test.js": "Tests only strictLookup=true and a populated cache."
+    },
+    "expectedRisks": [
+      "The default-off path is accidentally enabled because strict defaults to true.",
+      "The unchanged legacy caller no longer receives null for a missing account.",
+      "The adapter and unchanged consumer disagree on id versus userId."
+    ]
+  },
+  "botInventory": {
+    "reviewThreads": [
+      {
+        "id": "BOT_THREAD_1",
+        "isResolved": false,
+        "isOutdated": false,
+        "path": "src/lookup.js",
+        "line": 2,
+        "comments": {
+          "nodes": [
+            {
+              "id": "BOT_COMMENT_1",
+              "author": {
+                "login": "review-bot[bot]"
+              },
+              "body": "The default-off flag falls back to true, enabling strict behavior for callers that do not pass the flag.",
+              "url": "https://github.com/example/review-fixture/pull/7#discussion_r1",
+              "path": "src/lookup.js",
+              "line": 2,
+              "outdated": false,
+              "state": "SUBMITTED"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false,
+            "endCursor": null
+          }
+        }
+      }
+    ],
+    "issueComments": []
+  },
+  "manifest": {
+    "owner": "example",
+    "repo": "review-fixture",
+    "pullNumber": 7,
+    "url": "https://github.com/example/review-fixture/pull/7",
+    "headSha": "head-fixture-sha",
+    "baseSha": "base-fixture-sha",
+    "changedFiles": [
+      {
+        "path": "src/lookup.js",
+        "status": "modified"
+      },
+      {
+        "path": "src/adapter.js",
+        "status": "modified"
+      }
+    ]
+  }
+}

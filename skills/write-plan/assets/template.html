@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-template="omp-plan-v1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Implementation Plan: <!-- TOPIC --></title>
+  <!--
+    Draft skeleton for /write-plan. Keep the structure below and write plan
+    content as ordinary semantic HTML (h2/h3/h4, p, ul, ol, pre, table).
+    save-final-plan.cjs replaces the empty style block with the canonical plan
+    visual layer from agent/lib/html-document.cjs and renders Mermaid to SVG.
+    Do not add a palette, a top bar, a status badge, a theme toggle, or any
+    styles of your own.
+
+    Structural contract honored by the canonical layer:
+      .layout            grid shell (content column + contents rail)
+      main.content       plan body; section-label divs provide numbering
+      nav.toc            contents rail; one link per h2 section
+      .section-label     numbered eyebrow above each h2 (e.g. "01 · Decision")
+      h3[id^="task-"]    implementation task heading
+      p > strong (only child)          task field label ("Create/modify", "Tests")
+      p.plan-meta                     brainstorm credit line directly under the h1
+      .table-wrap > table             every table, so wide tables scroll safely
+      pre.mermaid[data-caption]       rendered to inline SVG by the saver
+      .footer            authored date, muted
+  -->
+  <style data-omp-plan-styles></style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to plan</a>
+  <div class="layout">
+    <main class="content" id="main">
+      <div class="section-label">Plan</div>
+      <h1><!-- PLAN TITLE --></h1>
+      <p class="plan-meta">Brainstorm: <a href="file://<!-- ABSOLUTE SOURCE PATH -->" title="<!-- ABSOLUTE SOURCE PATH -->"><!-- SOURCE FILE NAME --></a></p>
+      <p>Plan Status: Final</p>
+
+      <div class="section-label">01 · Decision</div>
+      <h2 id="executive-decision">Executive decision</h2>
+      <p><!-- WHAT CHANGES, WHO OWNS WHAT, AND WHAT STAYS THE SAME --></p>
+
+      <div class="section-label">02 · Outcomes</div>
+      <h2 id="outcomes-and-acceptance-criteria">Outcomes and acceptance criteria</h2>
+      <ol>
+        <li><!-- OBSERVABLE, VERIFIABLE BEHAVIOR --></li>
+      </ol>
+
+      <div class="section-label">03 · Scope</div>
+      <h2 id="scope-and-non-goals">Scope and non-goals</h2>
+      <h3 id="in-scope">In scope</h3>
+      <ul>
+        <li><!-- INCLUDED WORK --></li>
+      </ul>
+      <h3 id="explicit-non-goals">Explicit non-goals</h3>
+      <ul>
+        <li><!-- EXCLUDED WORK --></li>
+      </ul>
+
+      <div class="section-label">04 · Evidence</div>
+      <h2 id="repository-evidence-and-constraints">Repository evidence and constraints</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Evidence</th><th>What it establishes</th><th>Source</th></tr></thead>
+        <tbody><tr><td><!-- VERIFIED FACT --></td><td><!-- CONSEQUENCE --></td><td><code><!-- PATH OR SYMBOL --></code></td></tr></tbody>
+      </table></div>
+
+      <div class="section-label">05 · Architecture</div>
+      <h2 id="target-architecture">Target architecture</h2>
+      <pre class="mermaid" data-caption="Short takeaway">sequenceDiagram
+    participant A as Caller
+    participant B as Service
+    A->>B: Request
+    B-->>A: Result
+</pre>
+
+      <div class="section-label">06 · Tasks</div>
+      <h2 id="implementation-tasks">Implementation tasks</h2>
+      <h3 id="task-1-short-imperative-title">Task 1: Short imperative title</h3>
+      <p><strong>Create/modify</strong></p>
+      <ul>
+        <li><code><!-- EXACT PATH --></code>: <!-- EXACT CHANGE AND SYMBOLS --></li>
+      </ul>
+      <p><strong>Interfaces</strong></p>
+      <ul>
+        <li><!-- CONSUMED AND PRODUCED CONTRACTS --></li>
+      </ul>
+      <p><strong>Fixture</strong></p>
+      <ul>
+        <li><!-- CONCRETE FIXTURE OR INPUT --></li>
+      </ul>
+      <p><strong>Focused verification</strong></p>
+      <pre><code><!-- EXACT COMMAND --></code></pre>
+      <p>Expected: <!-- OBSERVABLE RESULT --></p>
+
+      <div class="section-label">07 · Verification</div>
+      <h2 id="end-to-end-verification-matrix">End-to-end verification matrix</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Scenario</th><th>Steps</th><th>Expected result</th></tr></thead>
+        <tbody><tr><td><!-- SCENARIO --></td><td><!-- STEPS --></td><td><!-- EXPECTED --></td></tr></tbody>
+      </table></div>
+
+      <div class="section-label">08 · Rollout</div>
+      <h2 id="rollout-and-migration">Rollout and migration</h2>
+      <ol>
+        <li><!-- ORDERED DEPLOY, FLAG, AND ROLLBACK STEPS --></li>
+      </ol>
+
+      <div class="section-label">09 · Decisions</div>
+      <h2 id="resolved-design-decisions">Resolved design decisions</h2>
+      <ul>
+        <li><!-- DECISION CARRIED FORWARD FROM THE BRAINSTORM --></li>
+      </ul>
+    </main>
+
+    <nav class="toc" aria-label="Plan sections">
+      <strong>Contents</strong>
+      <a href="#executive-decision">Decision</a>
+      <a href="#outcomes-and-acceptance-criteria">Outcomes</a>
+      <a href="#scope-and-non-goals">Scope</a>
+      <a href="#repository-evidence-and-constraints">Evidence</a>
+      <a href="#target-architecture">Architecture</a>
+      <a href="#implementation-tasks">Tasks</a>
+      <a href="#end-to-end-verification-matrix">Verification</a>
+      <a href="#rollout-and-migration">Rollout</a>
+      <a href="#resolved-design-decisions">Decisions</a>
+    </nav>
+  </div>
+  <footer class="footer">Authored <!-- Month DD, YYYY --></footer>
+</body>
+</html>

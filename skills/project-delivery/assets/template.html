@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" data-template="omp-project-delivery-v1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{DOCUMENT_TITLE}}</title>
+  <style data-omp-plan-styles></style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to execution guide</a>
+  <div class="layout">
+    <main class="content" id="main">
+      <header class="doc-header">
+        <div class="section-label">Project delivery</div>
+        {{TITLE}}
+      </header>
+      <section id="how-to-use">
+        <div class="section-label">01 · Start here</div>
+        {{START_HERE}}
+      </section>
+      <section id="developer-queues">
+        <div class="section-label">02 · Developer queues</div>
+        <h2>Work grouped by developer</h2>
+        {{DEVELOPER_QUEUES}}
+      </section>
+      {{HANDOFFS}}
+      <section aria-labelledby="dependency-reference">
+      <div class="section-label">03 · Dependencies</div>
+      <h2 id="dependency-reference">Global dependency reference</h2>
+      <!-- Keep internal approval packages, API payload files and hash manifests out of reader-facing links. -->
+      {{DEPENDENCY_GUIDANCE}}
+      {{DEPENDENCY_TABLE}}
+      {{STAGE_MEANINGS}}
+      </section>
+      <section aria-labelledby="ticket-descriptions">
+      <div class="section-label">04 · Complete deliveries</div>
+      <h2 id="ticket-descriptions">Complete ticket descriptions</h2>
+      {{TICKET_DESCRIPTIONS}}
+      </section>
+      <section aria-labelledby="delivery-evidence">
+      <div class="section-label">05 · Evidence and authorization</div>
+      <h2 id="delivery-evidence">Staffing, relations and approval</h2>
+      <details id="staffing-proof-authorization">
+        <summary>Staffing, proof partition and operational authorization</summary>
+        <div class="details-body">{{STAFFING_PROOF_AUTHORIZATION}}</div>
+      </details>
+      <details id="native-relation-details">
+        <summary>Exact native relation details</summary>
+        <div class="details-body">{{RELATION_DETAILS}}</div>
+      </details>
+      <details id="approval-context">
+        <summary>Publication approval context</summary>
+        <div class="details-body">{{APPROVAL_DETAILS}}</div>
+      </details>
+      </section>
+    </main>
+    <nav class="toc" aria-label="Execution guide sections">
+      <strong>Contents</strong>
+      <a href="#how-to-use">Start here</a>
+      <a href="#developer-queues">Developer queues</a>
+      {{DEVELOPER_NAVIGATION}}
+      <a href="#dependency-reference">Dependencies</a>
+      <a href="#ticket-descriptions">Complete tickets</a>
+      <a href="#delivery-evidence">Evidence and authorization</a>
+    </nav>
+  </div>
+  <footer class="footer">Authored {{AUTHORED_DATE}}</footer>
+</body>
+</html>

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Slack Debug"
+  short_description: "User-directed Zoe debugging through Chrome and local logs"
+  default_prompt: "Use $slack-debug to follow my instructions for local Zoe Slack debugging with its configured Chrome relay and logs."
+policy:
+  allow_implicit_invocation: false

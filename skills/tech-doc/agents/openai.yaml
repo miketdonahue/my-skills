@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical Doc"
+  short_description: "Explain how a feature works"
+  default_prompt: "Use $tech-doc to explain how this feature works as a concise technical HTML document."

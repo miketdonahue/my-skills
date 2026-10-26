@@ -1,0 +1,6 @@
+interface:
+  display_name: "List Worktrees"
+  short_description: "List all Herdr worktrees"
+  default_prompt: "Use $list-worktrees to list all Herdr worktrees for this repository."
+policy:
+  allow_implicit_invocation: false
